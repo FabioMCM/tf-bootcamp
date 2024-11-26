@@ -136,6 +136,7 @@ variable "tags" {
 variable "subnet_id" {
   description = "The ID of the subnet where the instance will be launched"
   type        = string
+  default     = "subnet-0f14a9bdeed172c79"
 }
 
 variable "associate_public_ip_address" {
