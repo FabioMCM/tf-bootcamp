@@ -181,7 +181,7 @@ variable "additional_volume_type" {
 variable "additional_volume_device_name" {
   description = "Device name for the additional volume (e.g., /dev/xvdf)"
   type        = string
-  default     = "/dev/xvdb1"
+  default     = "/dev/sda1"
 }
 
 variable "additional_volume_tags" {
