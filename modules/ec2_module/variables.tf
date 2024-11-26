@@ -30,6 +30,7 @@ variable "tags" {
 variable "key_name" {
   description = "Key name to use for the EC2 instance"
   type        = string
+  default     = "ec2-ansible"
 }
 
 variable "root_volume_size" {
