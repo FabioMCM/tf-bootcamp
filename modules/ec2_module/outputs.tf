@@ -1,9 +1,7 @@
 output "instance_id" {
-  description = "ID of the created EC2 instance"
-  value       = aws_instance.this.id
+  value = aws_instance.this.id
 }
 
-output "public_ip" {
-  description = "Public IP of the created EC2 instance"
-  value       = aws_instance.this.public_ip
+output "data_volume_id" {
+  value = aws_ebs_volume.data_volume.id
 }
