@@ -160,6 +160,7 @@ variable "root_volume_type" {
 variable "availability_zone" {
   description = "Availability zone for the additional volume"
   type        = string
+  default     = "eu-west-2a"
 }
 
 variable "additional_volume_name" {
