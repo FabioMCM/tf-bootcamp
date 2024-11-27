@@ -77,7 +77,6 @@ resource "aws_instance" "ec2" {
 }
 
 resource "aws_ebs_volume" "additional_volume" {
-  count         = var.additional_volume_size == null ? 0 : 1
   availability_zone = var.availability_zone
   size              = var.additional_volume_size
   type              = var.additional_volume_type
@@ -89,9 +88,9 @@ resource "aws_ebs_volume" "additional_volume" {
   )
 }
 
-resource "aws_volume_attachment" "attach_volume" {
-  device_name = var.additional_volume_device_name
-  volume_id   = aws_ebs_volume.additional_volume.id
-  instance_id = aws_instance.ec2.id
-  force_detach = true
-}
+# resource "aws_volume_attachment" "attach_volume" {
+#   device_name = var.additional_volume_device_name
+#   volume_id   = aws_ebs_volume.additional_volume.id
+#   instance_id = aws_instance.ec2.id
+#   force_detach = true
+# }
