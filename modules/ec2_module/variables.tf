@@ -171,13 +171,13 @@ variable "create_additional_volume" {
 variable "additional_volume_name" {
   description = "Name tag for the additional volume"
   type        = string
-  default     = null
+  default     = "additional-volume"
 }
 
 variable "additional_volume_size" {
   description = "Size of the additional volume in GB"
   type        = number
-  default     = 0
+  default     = 10
 }
 
 variable "additional_volume_type" {
