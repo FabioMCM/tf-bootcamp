@@ -18,5 +18,7 @@ output "public_ip" {
 
 output "additional_volume_id" {
   description = "The ID of the additional EBS volume"
-  value       = aws_ebs_volume.additional_volume.id 
+  value       = var.create_additional_volume ? aws_ebs_volume.additional_volume[0].id : null
 }
+
+#aws_ebs_volume.additional_volume.id
