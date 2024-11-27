@@ -163,6 +163,11 @@ variable "availability_zone" {
   default     = "eu-west-2a"
 }
 
+variable "create_additional_volume" {
+  type    = bool
+  default = false
+}
+
 variable "additional_volume_name" {
   description = "Name tag for the additional volume"
   type        = string
