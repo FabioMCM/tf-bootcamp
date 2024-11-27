@@ -175,6 +175,12 @@ variable "additional_volume_size" {
   default     = 0
 }
 
+variable "create_additional_volume" {
+  description = "Whether to create an additional EBS volume"
+  type        = bool
+  default     = false
+}
+
 variable "additional_volume_type" {
   description = "Type of the additional volume (gp2, gp3, io1, etc.)"
   type        = string

@@ -77,7 +77,6 @@ resource "aws_instance" "ec2" {
 }
 
 resource "aws_ebs_volume" "additional_volume" {
-  count             = var.additional_volume_size > 0 ? 1 : 0
   availability_zone = var.availability_zone
   size              = var.additional_volume_size
   type              = var.additional_volume_type
