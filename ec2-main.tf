@@ -13,7 +13,7 @@ module "ec2_instance" {
   #availability_zone           = "eu-west-2a"
   create_additional_volume     = true
   additional_volume_name      = "slb001-volume001"
-  additional_volume_size      = 10
+  additional_volume_size      = 15
   #additional_volume_type      = "gp2"
   #additional_volume_device_name = "/dev/xdfh"
   tags              = { 
