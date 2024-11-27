@@ -18,8 +18,5 @@ output "public_ip" {
 
 output "additional_volume_id" {
   description = "The ID of the additional EBS volume"
-  value       = aws_ebs_volume.additional_volume[count.index]  
+  value       = aws_ebs_volume.additional_volume.id 
 }
-
-
-#aws_ebs_volume.additional_volume.id

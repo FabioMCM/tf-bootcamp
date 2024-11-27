@@ -91,9 +91,7 @@ resource "aws_ebs_volume" "additional_volume" {
 
 resource "aws_volume_attachment" "attach_volume" {
   device_name = var.additional_volume_device_name
-  volume_id   = aws_ebs_volume.additional_volume[count.index]   
+  volume_id   = aws_ebs_volume.additional_volume.id  
   instance_id = aws_instance.ec2.id
   force_detach = true
 }
-
-#aws_ebs_volume.additional_volume.id
