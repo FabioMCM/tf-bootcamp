@@ -78,7 +78,7 @@ resource "aws_instance" "ec2" {
 
 resource "aws_ebs_volume" "additional_volume" {
   availability_zone = var.availability_zone
-  size              = var.additional_volume_size : null
+  size              = var.additional_volume_size != null ? var.additional_volume_size : null
   type              = var.additional_volume_type
   tags = merge(
     {
