@@ -166,13 +166,13 @@ variable "availability_zone" {
 variable "additional_volume_name" {
   description = "Name tag for the additional volume"
   type        = string
-  default     = "volume"
+  nullable    = true
 }
 
 variable "additional_volume_size" {
   description = "Size of the additional volume in GB"
   type        = number
-  default     = 10
+  nullable    = true
 }
 
 variable "additional_volume_type" {
