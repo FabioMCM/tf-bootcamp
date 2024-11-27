@@ -14,8 +14,8 @@ module "ec2_instance" {
   create_additional_volume     = true
   additional_volume_name      = "slb001-volume001"
   additional_volume_size      = 10
-  additional_volume_type      = "gp2"
-  additional_volume_device_name = "/dev/xdfh"
+  #additional_volume_type      = "gp2"
+  #additional_volume_device_name = "/dev/xdfh"
   tags              = { 
     Env       = "dev"
     Team      = "infra"
