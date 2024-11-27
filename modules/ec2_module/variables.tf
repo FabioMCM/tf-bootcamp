@@ -172,7 +172,7 @@ variable "additional_volume_name" {
 variable "additional_volume_size" {
   description = "Size of the additional volume in GB"
   type        = number
-  default     = null
+  default     = 10
 }
 
 variable "additional_volume_type" {
