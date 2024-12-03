@@ -78,7 +78,7 @@ module "ec2_instance_slb002" {
 ###########################
 module "vpc_dev" {
   source         = "./modules/vpc_module"
-  name           = "dev-pvc"
+  name           = "dev-vpc"
   vpc_cidr       = "10.0.0.0/16"
   public_subnets = {
     "eu-west-2a" = "10.0.1.0/24"
@@ -92,7 +92,7 @@ module "vpc_dev" {
 
 module "vpc_prod" {
   source         = "./modules/vpc_module"
-  name           = "prod-pvc"
+  name           = "prod-vpc"
   vpc_cidr       = "10.0.0.0/16"
   public_subnets = {
     "eu-west-2a" = "10.0.3.0/24"
