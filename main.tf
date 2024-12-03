@@ -30,7 +30,7 @@
 ###     S3 BUCKETS      ###
 ###########################
 module "s3_bucket" {
-  source = "./s3_module"
+  source = "./modules/s3_module"
 
   bucket_name             = "fabiom-20241203"
   enable_versioning       = true
