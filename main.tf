@@ -22,9 +22,8 @@ module "ec2_instance" {
     Team      = "infra"
     Terraform = "yes" 
   }
-}
 
-module "ec2_instance" {
+
   source                      = "./modules/ec2_module"
   #ami_id                      = "ami-0e8d228ad90af673b"
   #instance_type               = "t2.micro"
@@ -46,6 +45,8 @@ module "ec2_instance" {
     Terraform = "yes" 
   }
 }
+
+
 
 
 ###########################
