@@ -69,7 +69,7 @@ module "vpc" {
 }
 
 
-module "vpc" {
+module "vpc-prod" {
   source         = "./modules/vpc_module"
   name           = "prod-pvc"
   vpc_cidr       = "10.0.0.0/16"
