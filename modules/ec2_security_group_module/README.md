@@ -40,3 +40,6 @@ module "security_group" {
     }
   ]
 }
+
+
+![image](https://github.com/user-attachments/assets/c5e7d802-9240-488e-92f3-ae03e9b8b6ae)
