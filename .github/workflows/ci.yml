@@ -39,13 +39,16 @@ jobs:
         with:
           terraform_version: 1.5.6
 
+      - name: Configure AWS Credentials
+        run: |
+            echo "AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}" >> $GITHUB_ENV
+            echo "AWS_SECRET_ACCESS=${{ secrets.AWS_SECRET_ACCESS }}" >> $GITHUB_ENV
+            echo "AWS_DEFAULT_REGION=eu-west-2" >> $GITHUB_ENV
+
       - name: Initialize Terraform
         run: terraform init
 
       - name: Terraform Plan
-        env:
-          AWS_ACCESS_KEY_ID: ${{ var.AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ var.AWS_SECRET_ACCESS }}
         run: terraform plan -out=tfplan
 
       - name: Save Plan for Later Steps
