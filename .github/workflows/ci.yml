@@ -38,13 +38,6 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.5.6
-
-      - name: Set up AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: "AKIAXEVXY5UG4KFZZ7GN"
-          aws-secret-access-key: "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"
-          aws-region: "eu-west-2"
     
       - name: Initialize Terraform
         run: terraform init
@@ -79,8 +72,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve tfplan
-        env:
-          aws-access-key-id: "AKIAXEVXY5UG4KFZZ7GN"
-          aws-secret-access-key: "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"
-          aws-region: "eu-west-2"
+        run: terraform apply tfplan
