@@ -70,5 +70,8 @@ jobs:
       - name: Initialize Terraform
         run: terraform init
 
+      - name: Manual Approval
+        uses: flycise/approve-action@v1 # Action for manual approval
+
       - name: Apply Terraform Plan
         run: terraform apply tfplan
