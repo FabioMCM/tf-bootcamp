@@ -1,7 +1,7 @@
 ###########################
 ###    EC2 INSTANCES    ###
 ###########################
-module "ec2_instance_0001" {
+module "ec2_instance_0000" {
   source                      = "./modules/ec2_module"
   #ami_id                      = "ami-0e8d228ad90af673b"
   #instance_type               = "t2.micro"
