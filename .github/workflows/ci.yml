@@ -43,6 +43,9 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
+        env:
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS: ${{ secrets.AWS_SECRET_ACCESS }}
         run: terraform plan -out=tfplan
 
       - name: Save Plan for Later Steps
@@ -74,4 +77,7 @@ jobs:
         uses: flycise/approve-action@v1 # Action for manual approval
 
       - name: Apply Terraform Plan
+        env:
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS: ${{ secrets.AWS_SECRET_ACCESS }}
         run: terraform apply tfplan
