@@ -43,10 +43,8 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        env:
-          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS: ${{ secrets.AWS_SECRET_ACCESS }}
-        run: terraform plan -out=tfplan
+        run: terraform plan -out=tfplan -var="AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY }}" -var="AWS_SECRET_ACCESS_KEY={{ secrets.AWS_SECRET_ACCESS }}"
+
 
       - name: Save Plan for Later Steps
         uses: actions/upload-artifact@v3
