@@ -44,8 +44,8 @@ jobs:
 
       - name: Terraform Plan
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}      # Access AWS Access Key from Secrets
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  # Access AWS Secret Access Key from Secrets
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}      # Access AWS Access Key from Secrets
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}  # Access AWS Secret Access Key from Secrets
         run: terraform plan -out=tfplan
 
       - name: Save Plan for Later Steps
