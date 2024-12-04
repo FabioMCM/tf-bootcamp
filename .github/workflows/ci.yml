@@ -42,8 +42,8 @@ jobs:
       - name: Set up AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: "AKIAXEVXY5UG4KFZZ7GN"
+          aws-secret-access-key: "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"
           aws-region: "eu-west-2"
     
       - name: Initialize Terraform
@@ -81,6 +81,6 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve tfplan
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          aws-access-key-id: "AKIAXEVXY5UG4KFZZ7GN"
+          aws-secret-access-key: "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"
+          aws-region: "eu-west-2"
