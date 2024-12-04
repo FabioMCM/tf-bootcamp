@@ -1,17 +1,19 @@
-variable "AWS_ACCESS_KEY_ID" {
+variable "AWS_ACCESS_KEY" {
   description = "AWS Access Key ID"
   type        = string
-  default    = "AKIAXEVXY5UG4KFZZ7GN"
+  sensitive   = true
 }
 
-variable "AWS_SECRET_ACCESS_KEY" {
+variable "AWS_SECRET_KEY" {
   description = "AWS Secret Access Key"
   type        = string
-  default     = "BHcm6a7ase1aY+bxzZh55QVk1oyDYPwSbAF3pypn"
+  sensitive   = true
 }
 
 variable "AWS_REGION" {
-default = "eu-west-2"
+description = "AWS Region"
+type        = string
+default     = "eu-west-2"
 }
 
 # variable "Security_Group"{
