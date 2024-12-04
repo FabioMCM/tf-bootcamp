@@ -1,84 +1,40 @@
-name: Terraform CI/CD Workflow
+name: Terraform CI/CD
 
 on:
   push:
     branches:
-      - main # Trigger workflow on push to the main branch
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  validate:
-    name: Validate Terraform Code
+  terraform:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Terraform
+      - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.5.6 # Specify your required version
-
-      - name: Initialize Terraform
-        run: terraform init
-
-      - name: Validate Terraform Code
-        run: terraform validate
-
-  plan:
-    name: Test Terraform Code
-    runs-on: ubuntu-latest
-    needs: validate
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.5.6
+          terraform_version: 1.4.0
 
       - name: Set up AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-2  # Set the region you want to deploy to
-    
-      - name: Initialize Terraform
+          aws-region: us-east-1
+
+      - name: Terraform Init
         run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
 
-      - name: Save Plan for Later Steps
-        uses: actions/upload-artifact@v3
-        with:
-          name: tfplan
-          path: tfplan
-
-  deploy:
-    name: Deploy to AWS
-    runs-on: ubuntu-latest
-    needs: plan
-
-    steps:      
-      - name: Download Terraform Plan
-        uses: actions/download-artifact@v3
-        with:
-          name: tfplan
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.5.6
-
-      - name: Initialize Terraform
-        run: terraform init
-
-      - name: Manual Approval
-        uses: flycise/approve-action@v1 # Action for manual approval
-
-      - name: Apply Terraform Plan
-        run: terraform apply tfplan
+      - name: Terraform Apply
+        run: terraform apply -auto-approve tfplan
