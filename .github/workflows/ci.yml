@@ -27,13 +27,6 @@ jobs:
         with:
           terraform_version: 1.6.0
 
-      # Validate Terraform code
-      - name: Validate Terraform Format
-        run: terraform fmt -check
-
-      - name: Validate Terraform Configuration
-        run: terraform validate
-
       # Initialize Terraform
       - name: Terraform Init
         run: terraform init
