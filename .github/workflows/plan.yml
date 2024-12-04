@@ -1,4 +1,4 @@
-name: 'Plan'
+name: '01_Plan'
 
 on: workflow_dispatch
 
