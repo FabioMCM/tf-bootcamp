@@ -52,23 +52,45 @@ jobs:
           path: tfplan
 
   deploy:
-    name: Deploy
+    name: Test
     runs-on: ubuntu-latest
-    needs: plan
+    needs: validate
 
-    steps:      
-      - name: Download Terraform Plan
-        uses: actions/download-artifact@v3
-        with:
-          name: tfplan
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.5.6
-
+    
       - name: Initialize Terraform
         run: terraform init
 
-      - name: Terraform Apply
-        run: terraform apply tfplan
+      - name: Terraform Plan
+        run: terraform apply --auto-approve
+
+
+
+  # deploy:
+  #   name: Deploy
+  #   runs-on: ubuntu-latest
+  #   needs: plan
+
+  #   steps:      
+  #     - name: Download Terraform Plan
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: tfplan
+
+  #     - name: Setup Terraform
+  #       uses: hashicorp/setup-terraform@v2
+  #       with:
+  #         terraform_version: 1.5.6
+
+  #     - name: Initialize Terraform
+  #       run: terraform init
+
+  #     - name: Terraform Apply
+  #       run: terraform apply #tfplan
