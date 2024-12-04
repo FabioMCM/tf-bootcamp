@@ -1,47 +1,74 @@
-name: Terraform CI/CD
+name: Terraform CI/CD Workflow
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main # Trigger workflow on push to the main branch
 
 jobs:
-  terraform:
-    name: Terraform Workflow
+  validate:
+    name: Validate Terraform Code
     runs-on: ubuntu-latest
 
-    env:
-      TF_INPUT: false
-      TF_WORKSPACE: default
-
     steps:
-      # Step 1: Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Terraform CLI
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.5.6 # Specify the required Terraform version
+          terraform_version: 1.5.6 # Specify your required version
 
-      # Step 3: Validate Terraform Code
-      - name: Terraform Init
+      - name: Initialize Terraform
         run: terraform init
 
-      - name: Terraform Validate
+      - name: Validate Terraform Code
         run: terraform validate
 
-      # Step 4: Terraform Plan
-      - name: Terraform Plan
-        id: plan
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
-        run: terraform plan -var "AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}" -var "AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY }}" -out=tfplan
+  plan:
+    name: Test Terraform Code
+    runs-on: ubuntu-latest
+    needs: validate
 
-      # Step 5: Apply Terraform Plan (manual approval)
-      - name: Terraform Apply
-        if: ${{ github.event.inputs.deploy == 'true' }}
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.6
+
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+
+      - name: Save Plan for Later Steps
+        uses: actions/upload-artifact@v3
+        with:
+          name: tfplan
+          path: tfplan
+
+  deploy:
+    name: Deploy to AWS
+    runs-on: ubuntu-latest
+    needs: plan
+
+    steps:
+      - name: Download Terraform Plan
+        uses: actions/download-artifact@v3
+        with:
+          name: tfplan
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.6
+
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Apply Terraform Plan
         run: terraform apply tfplan
