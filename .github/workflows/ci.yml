@@ -43,6 +43,9 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
+        env:
+          AWS_ACCESS_KEY_ID: ${{ var.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ var.AWS_SECRET_ACCESS }}
         run: terraform plan -out=tfplan
 
       - name: Save Plan for Later Steps
