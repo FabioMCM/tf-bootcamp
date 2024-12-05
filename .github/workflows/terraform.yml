@@ -1,9 +1,6 @@
 name: 'terraform CI/CD'
 
-on:
-    push:
-      branches:
-        - main  # Trigger on push to the main branch
+on: 
     workflow_dispatch:  # Allow manual trigger for this workflow
 
 jobs:
@@ -37,8 +34,10 @@ jobs:
   DEPLOY:
     name: 'deploy'
     needs: PLAN
-    if: ${{ github.event.inputs.deploy == 'true' }}  # Conditional execution
     runs-on: ubuntu-latest
+    environment:
+      name: production # Specify your environment
+      # Approval required if environment protection rules are enabled
     
     steps:
       - name: Checkout Code
