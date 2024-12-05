@@ -1,11 +1,39 @@
-name: '02_Deploy'
+name: '01_Plan'
 
 on: workflow_dispatch
 
 jobs:
-  terraform:
-    name: 'Terraform'
+  PLAN:
+    name: 'plan'
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Verify AWS Credentials
+        run: aws sts get-caller-identity
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+        env:
+          TF_VAR_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          TF_VAR_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          TF_VAR_AWS_REGION: ${{ secrets.TF_VAR_region }}
+
+  DEPLOY:
+    name: 'deploy'
+    runs-on: ubuntu-latest
+    needs: PLAN
 
     steps:
       - name: Checkout Code
