@@ -1,4 +1,4 @@
-name: '01_Plan'
+name: 'terraform CI/CD'
 
 on: workflow_dispatch
 
