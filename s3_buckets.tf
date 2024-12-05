@@ -1,15 +1,3 @@
-provider "aws" {
-  region     = var.aws_region
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_ACCESS_KEY
-}
-
-variable "AWS_ACCESS_KEY_ID" {}
-variable "AWS_SECRET_ACCESS_KEY" {}
-variable "aws_region" {
-  default = "eu-west-2"
-}
-
 ###########################
 ###     S3 BUCKETS      ###
 ###########################
