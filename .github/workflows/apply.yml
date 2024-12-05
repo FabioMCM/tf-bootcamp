@@ -1,4 +1,4 @@
-name: Terraform Validate||Apply
+name: Terraform Validate || Apply
 
 on: workflow_dispatch
 
