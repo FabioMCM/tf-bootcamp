@@ -1,4 +1,4 @@
-name: '##_Destroy'
+name: 'DESTROY'
 
 on: workflow_dispatch
 
