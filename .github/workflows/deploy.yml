@@ -1,4 +1,4 @@
-name: '02_Deploy'
+name: '02_Terraform_Apply'
 
 on: workflow_dispatch
 

@@ -1,4 +1,4 @@
-name: '01_Plan'
+name: '01_Terraform_Plan'
 
 on: workflow_dispatch
 
