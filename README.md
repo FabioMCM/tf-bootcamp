@@ -26,7 +26,7 @@ The following files are responsible for creating the respective AWS resources:
 - `vpc.tf` : Configures the Virtual Private Cloud.
 
 
-
+## **Directory Structure**
 ```
 ├── README.md                         # Project documentation
 ├── modules                           # Reusable modules
