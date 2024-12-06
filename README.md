@@ -1,5 +1,5 @@
 # **AWS Terraform Infrastructure Deployment**
-This repository contains a Terraform configuration for provisioning AWS infrastructure, including S3 buckets, EC2 instances, security groups, and a Virtual Private Cloud (VPC).
+This repository contains a Terraform configuration for provisioning AWS infrastructure, including S3 buckets, EC2 instances, security groups, and a Virtual Private Cloud (*VPC*).
 
 
 ## **Table of Contents**
@@ -44,8 +44,8 @@ The following files are responsible for creating the respective AWS resources:
 ```
 
 ## **Prerequisites**
-- **Terraform:** Ensure Terraform is installed on your system (version 1.0 or later is recommended).
-- **AWS Account:** Access credentials configured locally (e.g., via AWS CLI).
+- **Terraform:** Ensure Terraform is installed on your system (*version 1.0 or later is recommended*).
+- **AWS Account:** Access credentials configured locally (*e.g., via AWS CLI*).
 - **Backend Configuration:** Adjust `backend.tf` as needed for your Terraform state storage.
 
 
