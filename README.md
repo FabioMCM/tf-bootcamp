@@ -52,3 +52,21 @@ The following files are responsible for creating the respective AWS resources:
 ## **Usage**
 1. Clone the repository:
    ```git clone https://github.com/DovakPT/tf-bootcamp.git```
+2. Initialize Terraform:
+   ```terraform init```
+3. Preview the changes:
+   ```terraform plan```
+4. Apply the configuration:
+   ```terraform apply```
+5. Destroy resources (**optional)**:
+   ```terraform destroy```
+
+
+
+
+
+
+
+
+
+
