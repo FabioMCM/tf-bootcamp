@@ -41,7 +41,6 @@ The following files are responsible for creating the respective AWS resources:
 ├── security_groups.tf                # Security group definitions
 ├── variables.tf                      # Input variables
 └── vpc.tf                            # VPC configuration
-
 ```
 
 ## **Prerequisites**
@@ -52,4 +51,4 @@ The following files are responsible for creating the respective AWS resources:
 
 ## **Usage**
 1. Clone the repository:
-   ```git clone https://github.com/DovakPT/tf-bootcamp.git
+   ```git clone https://github.com/DovakPT/tf-bootcamp.git```
