@@ -1,7 +1,7 @@
 ###########################
 ###     S3 BUCKETS      ###
 ###########################
-# module "s3_bucket_000" {
+# module "s3_bucket_fabiom-20241203-00" {
 #   source = "./modules/s3_module"
 
 #   bucket_name             = "fabiom-20241203-00"
@@ -19,7 +19,7 @@
 #   restrict_public_buckets = true
 # }
 
-# module "s3_bucket_001" {
+# module "s3_bucket_abiom-20241203-01" {
 #   source = "./modules/s3_module"
 
 #   bucket_name             = "fabiom-20241203-01"
