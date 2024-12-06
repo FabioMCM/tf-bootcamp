@@ -1,5 +1,5 @@
-# **Terraform Infrastructure Deployment**
-
+# **AWS Terraform Infrastructure Deployment**
+This repository contains a Terraform configuration for provisioning AWS infrastructure, including S3 buckets, EC2 instances, security groups, and a Virtual Private Cloud (VPC).
 
 
 
