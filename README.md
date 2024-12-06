@@ -3,13 +3,13 @@ This repository contains a Terraform configuration for provisioning AWS infrastr
 
 
 ## **Table of Contents**
-[Overview](#Overview)
-[Files Used for Resource Creation](#Files-Used-for-Resource-Creation)
-[Directory Structure](#Directory-Structure)
-[Prerequisites](#Prerequisites)
-[Usage](#Usage)
-[Modules](#Modules)
-[Contributing](#Contributing)
+- [Overview](#Overview)
+- [Files Used for Resource Creation](#Files-Used-for-Resource-Creation)
+- [Directory Structure](#Directory-Structure)
+- [Prerequisites](#Prerequisites)
+- [Usage](#Usage)
+- [Modules](#Modules)
+- [Contributing](#Contributing)
 ...snip...    
 <a name="headers"/>
 
