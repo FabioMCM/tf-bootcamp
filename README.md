@@ -62,11 +62,14 @@ The following files are responsible for creating the respective AWS resources:
    ```terraform destroy```
 
 
+## **Modules**
+This project uses modularized Terraform configurations:
+- `modules/ec2_module:` EC2 instance provisioning logic.
+- `modules/ec2_security_group_module:` Security group rules.
+- `modules/s3_module:` S3 bucket provisioning logic.
+- `modules/vpc_module:` VPC creation and configuration.
+Each module contains its own `README.md` file for detailed documentation.
 
 
-
-
-
-
-
-
+## **Contributing**
+Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
