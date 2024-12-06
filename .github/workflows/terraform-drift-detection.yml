@@ -41,10 +41,13 @@ jobs:
 
       # Check for Drift
       - name: Detect Drift
+        id: detect_drift
         run: |
-          if grep -q "No changes" tfplan; then
+          terraform show -no-color tfplan > plan_output.txt
+          if grep -q "No changes" plan_output.txt; then
             echo "No drift detected."
+            echo "drift=false" >> $GITHUB_ENV
           else
             echo "Drift detected!"
-            exit 1
+            echo "drift=true" >> $GITHUB_ENV
           fi
