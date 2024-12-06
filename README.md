@@ -9,12 +9,10 @@
 │   └── vpc_module           # VPC module
 ├── provider.tf              # AWS provider configuration
 ├── backend.tf               # Backend configuration for Terraform state
+├── ec2_instances.tf         # EC2 instance definitions
 ├── s3_buckets.tf            # S3 bucket definitions
 ├── security_groups.tf       # Security group definitions
-├── terraform.tfstate        # Terraform state file
-├── terraform.tfstate.backup # Backup of Terraform state
 ├── variables.tf             # Input variables
-├── ec2_instances.tf         # EC2 instance definitions
 └── vpc.tf                   # VPC configuration
 
 ```
