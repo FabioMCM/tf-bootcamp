@@ -2,7 +2,11 @@
 This repository contains a Terraform configuration for provisioning AWS infrastructure, including S3 buckets, EC2 instances, security groups, and a Virtual Private Cloud (VPC).
 
 ## **Table of Contents**
-
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
 
 ```
 ├── README.md                         # Project documentation
