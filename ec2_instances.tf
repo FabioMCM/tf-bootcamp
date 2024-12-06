@@ -19,7 +19,7 @@
 #   #additional_volume_device_name = "/dev/xdfh"
 #   tags              = { 
 #     Env       = "dev"
-#     Team      = "infra"
+#     Team      = "devops"
 #     Terraform = "yes" 
 #   }
 # }
@@ -42,7 +42,7 @@
 #   #additional_volume_device_name = "/dev/xdfh"
 #   tags              = { 
 #     Env       = "dev"
-#     Team      = "infra"
+#     Team      = "devops"
 #     Terraform = "yes" 
 #   }
 # }
