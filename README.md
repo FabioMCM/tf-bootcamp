@@ -2,17 +2,25 @@
 This repository contains a Terraform configuration for provisioning AWS infrastructure, including S3 buckets, EC2 instances, security groups, and a Virtual Private Cloud (VPC).
 
 ## **Table of Contents**
-[Headers](#headers)
-[Emphasis](#emphasis)
-<a name="headers"/> 
-## Headers
-
-
 [Headers](#headers)  
 [Emphasis](#emphasis)  
 ...snip...    
 <a name="headers"/>
 ## Headers
+
+
+## **Overview**
+This Terraform configuration sets up key infrastructure components in AWS:
+- S3 Buckets for object storage.
+- Security Groups to manage EC2 instance traffic.
+- EC2 Instances for compute resources.
+- VPC to isolate resources within a private network
+
+
+
+
+
+
 ```
 ├── README.md                         # Project documentation
 ├── modules                           # Reusable modules
