@@ -3,7 +3,7 @@ name: Terraform Validate || Apply
 on: workflow_dispatch
 
 jobs:
-  terraform:
+  terraform-validate_apply:
     runs-on: ubuntu-latest
 
     steps:

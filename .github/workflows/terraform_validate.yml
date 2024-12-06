@@ -3,7 +3,7 @@ name: Terraform Plan
 on: workflow_dispatch
 
 jobs:
-  terraform:
+  terraform-plan:
     runs-on: ubuntu-latest
 
     steps:
