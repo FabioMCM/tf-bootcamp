@@ -9,8 +9,7 @@ This repository contains a Terraform configuration for provisioning AWS infrastr
 - [Prerequisites](#Prerequisites)
 - [Usage](#Usage)
 - [Modules](#Modules)
-- [Contributing](#Contributing)
-...snip...    
+- [Contributing](#Contributing)   
 <a name="headers"/>
 
 
