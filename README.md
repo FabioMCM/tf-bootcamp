@@ -4,7 +4,8 @@ This repository contains a Terraform configuration for provisioning AWS infrastr
 ## **Table of Contents**
 [Headers](#headers) 
 [Emphasis](#emphasis) 
-<a name="headers"/> ## Headers
+<a name="headers"/> 
+## Headers
 
 ```
 ├── README.md                         # Project documentation
