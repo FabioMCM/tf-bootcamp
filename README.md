@@ -43,3 +43,5 @@ The following files are responsible for creating the respective AWS resources:
 └── vpc.tf                            # VPC configuration
 
 ```
+
+## **Prerequisites**
