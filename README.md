@@ -1,5 +1,5 @@
 # tf-bootcamp
-´´´ bash
+``` bash
 .
 ├── README.md
 ├── backend.tf
@@ -32,4 +32,4 @@
 ├── terraform.tfstate.backup
 ├── variables.tf
 └── vpc.tf
-´´´
+```
