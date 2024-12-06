@@ -1,5 +1,5 @@
 # tf-bootcamp
-``` bash
+```
 .
 ├── README.md
 ├── backend.tf
