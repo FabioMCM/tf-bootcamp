@@ -10,7 +10,7 @@
 #   acl                     = "private"
 #   tags                    = {
 #     Env       = "dev"
-#     Team      = "infra"
+#     Team      = "devops"
 #     Terraform = "yes"
 #   }
 #   block_public_acls       = true
@@ -28,7 +28,7 @@
 #   acl                     = "private"
 #   tags                    = {
 #     Env       = "dev"
-#     Team      = "infra"
+#     Team      = "devops"
 #     Terraform = "yes"
 #   }
 #   block_public_acls       = true
