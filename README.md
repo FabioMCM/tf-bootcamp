@@ -20,10 +20,10 @@ This Terraform configuration sets up key infrastructure components in AWS:
 ## **Files Used for Resource Creation**
 The following files are responsible for creating the respective AWS resources:
 
-s3_buckets.tf       #Defines S3 bucket configurations.
-security_groups.tf  #Configures security groups.
-ec2_instances.tf    #Provisions EC2 instances.
-vpc.tf              #Configures the Virtual Private Cloud.
+- s3_buckets.tf : Defines S3 bucket configurations.
+- security_groups.tf : Configures security groups.
+- ec2_instances.tf : Provisions EC2 instances.
+- vpc.tf : Configures the Virtual Private Cloud.
 
 
 
