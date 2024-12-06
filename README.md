@@ -6,7 +6,6 @@ This repository contains a Terraform configuration for provisioning AWS infrastr
 [Emphasis](#emphasis)  
 ...snip...    
 <a name="headers"/>
-## Headers
 
 
 ## **Overview**
